@@ -21,6 +21,21 @@ repositories {
 dependencies {
 	// Spring Boot Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Spring Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// JWT (JSON Web Token)
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// Spring Boot JPA
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// PostgreSQL Driver
+	runtimeOnly 'org.postgresql:postgresql'
 
 	// Spring Boot Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -30,6 +45,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// jaxb
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'
 
 	// Swagger (Springdoc OpenAPI)

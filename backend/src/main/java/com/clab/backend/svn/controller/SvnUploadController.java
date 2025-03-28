@@ -15,8 +15,8 @@ public class SvnUploadController implements SvnUploadControllerSpecification {
     private final SvnFileHandler svnFileHandler;
 
     @PostMapping("/upload")
-    public ResponseEntity<?> upload(@RequestBody SvnUploadRequest request, @RequestParam("file") MultipartFile file){
-        //svnFileHandler.handleExcelUpload(request, file);
+    public ResponseEntity<?> upload(@RequestBody SvnUploadRequest request, @RequestParam("file") MultipartFile file) throws Exception {
+        svnFileHandler.handleExcelUpload(request, file);
         return ResponseEntity.ok().build();
     }
 }

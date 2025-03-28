@@ -50,6 +50,12 @@ dependencies {
 
 	// Swagger (Springdoc OpenAPI)
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+	// svnkit
+	implementation 'org.tmatesoft.svnkit:svnkit:1.10.3'
+
+	implementation 'org.apache.poi:poi:5.2.3'
+	implementation 'org.apache.poi:poi-ooxml:5.2.3'
 }
 
 tasks.named('test') {

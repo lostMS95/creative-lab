@@ -1,5 +1,6 @@
 package com.clab.backend.svn.service;
 
+import com.clab.backend.security.util.SecurityHelper;
 import com.clab.backend.svn.dto.SvnUploadRequest;
 import com.clab.backend.user.domain.User;
 import com.clab.backend.user.repository.UserRepository;
@@ -20,10 +21,11 @@ public class SvnService {
 
     private final UserRepository userRepository;
     private final SvnUtil svnUtil;
+    private final SecurityHelper securityHelper;
 
     public void svnUpload(SvnUploadRequest request, String filePath) throws Exception {
         // 인증된 사용자 가져오기
-       /* User user = getAuthenticatedUser();
+        User user = securityHelper.getAuthenticatedUser();
 
         // 파일 확장자 처리
         String fileExtension = getFileExtension(filePath);
@@ -35,13 +37,7 @@ public class SvnService {
 
         // 엑셀 체크아웃 및 수정
         String formattedDate = request.expDt().format(DateTimeFormatter.ofPattern("yyyy년 M월 d일 E요일", Locale.KOREAN));
-        svnUtil.checkoutAndModifyExcel(user, request);*/
-    }
-
-    private User getAuthenticatedUser() {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        return userRepository.findByUserId(auth.getName())
-                .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
+        //svnUtil.checkoutAndModifyExcel(user, request);
     }
 
     private String getFileExtension(String filePath) {

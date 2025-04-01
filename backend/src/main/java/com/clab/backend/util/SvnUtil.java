@@ -17,7 +17,7 @@ import java.time.LocalDate;
 
 @Component
 public class SvnUtil {
-   /* private final ExcelUtil excelUtil;
+    private final ExcelUtil excelUtil;
     private final String svnBaseUrl;
     private final String svnDirectory;
 
@@ -60,7 +60,7 @@ public class SvnUtil {
     }
 
     public void checkoutAndModifyExcel(User user, String position, String expendType, String cardType, String excelDate, String excelDetail, String excelAmount) throws Exception {
-        SVNClientManager clientManager = createSVNClientManager(user);
+        /*SVNClientManager clientManager = createSVNClientManager(user);
 
         // SVN 리포지토리에서 파일 체크아웃
         SVNUpdateClient updateClient = clientManager.getUpdateClient();
@@ -86,7 +86,7 @@ public class SvnUtil {
         excelUtil.saveExcelFile(workbook, excelFile.getPath());
 
         // 변경된 파일을 SVN에 커밋
-        commitChanges(clientManager, excelFile.getPath());
+        commitChanges(clientManager, excelFile.getPath());*/
     }
 
     private void commitChanges(SVNClientManager clientManager, String filePath) throws Exception {
@@ -103,5 +103,5 @@ public class SvnUtil {
         } else {
             System.out.println("커밋에 실패했습니다: " + commitInfo.getErrorMessage().getFullMessage());
         }
-    }*/
+    }
 }

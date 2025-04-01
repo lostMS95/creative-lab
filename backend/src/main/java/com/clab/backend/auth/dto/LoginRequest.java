@@ -10,5 +10,5 @@ public record LoginRequest(
 
         @Schema(description = "비밀번호", example = "securePassword!")
         String userPw
-    ) {
+) {
 }

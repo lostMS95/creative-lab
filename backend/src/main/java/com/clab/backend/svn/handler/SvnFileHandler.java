@@ -20,7 +20,7 @@ public class SvnFileHandler {
             String savedFilePath = fileService.saveFile(file);
 
             // SVN 업로드
-            //svnService.svnUpload(request, savedFilePath);
+            svnService.svnUpload(request, savedFilePath);
 
         } catch (Exception e) {
             throw new Exception("엑셀 업로드 중 오류 발생", e);

@@ -6,6 +6,9 @@ import java.time.LocalDate;
 @Schema(description = "SVN 업로드 요청")
 public record SvnUploadRequest(
 
+        @Schema(description = "제목", example = "0101_홍길동_팀비사용")
+        String title,
+
         @Schema(description = "커밋 메시지", example = "엑셀 파일 업로드")
         String commitMessage,
 

@@ -1,19 +1,25 @@
-import logoImg from './img_upload.png';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home/HomePage';
+import UploadPage from './pages/home/UploadPage';
+import Header from './Components/Header';
+import LoginPage from './pages/LoginPage';
 import './Reset.css';
 import './App.css';
+import './index.css'; // Tailwind 적용
+import './sub.css';
 
 function App() {
   return (
-    <div className="LoginPg">
-      <header className="App-header">
-      <img src={logoImg} alt="creative-lab" style={{ width: "100px" }} />
-        <input type="text" className="input-style" placeholder="아이디를 입력해 주세요."/>
-        <input type="password" className="input-style" placeholder="비밀번호를 입력해 주세요."/>
-        <input type="checkbox" id="saveId"/><label for="saveId"><span></span>아이디 저장</label>
-        <button className="login-button" type="button">로그인</button>
-        <a href="#">아이디/비밀번호 찾기</a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/upload" element={<UploadPage />} />
+        {/* 다른 라우트들도 여기에 추가 가능 */}
+      </Routes>
+    </Router>
   )
 }
 
